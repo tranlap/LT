@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>SimplicaTheme</code>
+  <name>Simplica Theme</name>
+  <version>1.0</version>
+  <author>HarnishDesign</author>
+  <link>http://www.harnishdesign.net</link>
+  
+  <file path="catalog/view/theme/simplica/template/common/cart.tpl">
+    <operation>
+      <search>
+        <![CDATA[<div id="cart" class="btn-group btn-block">]]>
+      </search>
+      <add position="replace">
+        <![CDATA[<div id="cart" class="btn-group">]]>
+      </add>
+    </operation>
+  </file>
+  <!-- OwlCarousel-->
+  <file path="catalog/controller/extension/module/{carousel,banner}*.php">
+    <operation>
+      <search>
+        <![CDATA[$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$this->document->addStyle('catalog/view/theme/simplica/stylesheet/owl.carousel.css');]]>
+      </add>
+    </operation>
+  </file>
+  <file path="catalog/controller/extension/module/slideshow.php">
+    <operation>
+      <search>
+        <![CDATA[$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$this->document->addStyle('catalog/view/theme/simplica/stylesheet/owl.carousel.css');]]>
+      </add>
+    </operation>
+  </file>
+  <file path="catalog/view/theme/*/template/common/footer.tpl">
+    <operation>
+      <search>
+        <![CDATA[<p class="pull-left"><?php echo $powered; ?></p>]]>
+      </search>
+      <add position="after">
+        <![CDATA[<p class="pull-right">Theme By <a target="_blank" href="http://www.harnishdesign.net">Harnish Design</a></p>]]>
+      </add>
+    </operation>
+  </file>
+</modification>
